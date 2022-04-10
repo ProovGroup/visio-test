@@ -1,0 +1,81 @@
+// Bulma
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/all";
+@import "~bulma/sass/elements/all";
+@import "~bulma/sass/form/all";
+@import "~bulma/sass/components/all";
+@import "~bulma/sass/grid/all";
+@import "~bulma/sass/helpers/all";
+@import "~bulma/sass/layout/all";
+
+// Buefy
+@import "~buefy/src/scss/buefy";
+
+body {
+  margin: 0 !important;
+}
+
+main {
+  background-color: #F5F6F7;
+
+  .container {
+    padding-top: 30px;
+  }
+}
+
+.is-full-height {
+  height: 100vh;
+}
+.is-full-width {
+  width: 100%;
+}
+
+.is-half-width {
+  width: 50%
+}
+
+.is-full-xy {
+  @extend .is-full-height;
+  @extend .is-full-width
+}
+
+.is-sticky {
+  position: sticky !important;
+}
+
+.is-170x170 {
+  width: 170px;
+  max-width: 170px;
+  height: 170px;
+  max-height: 170px;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: ease .2s
+}
+.page-enter, .page-leave-active {
+  opacity: 0.1
+}
+
+.select {
+  &.is-empty select {
+    color: rgba($input-color, 0.3) !important;
+  }
+}
+
+.navbar-item {
+  padding: 0.7rem 1.5rem;
+}
+.pagination-link {
+  background-color: white;
+}
+.datepicker-cell {
+  &.is-first-hovered, &.is-last-hovered  {
+    background-color: $grey-dark !important;
+  }
+}
+.select {
+  &.is-empty select {
+    color: rgba($grey-dark, 0.7);
+  }
+}
