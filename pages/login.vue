@@ -29,6 +29,7 @@ import { BCheckbox } from 'buefy/dist/components/checkbox'
 import { BInput } from 'buefy/dist/components/input'
 
 import WpField from '~/components/Form/FreyaField.vue'
+import {split} from "lodash-es";
 
 export default Vue.extend({
   name: 'ClaimLogin',
@@ -50,15 +51,20 @@ export default Vue.extend({
       try {
         await this.$store.dispatch('auth/login', { email, password, stayConnected })
 
-        if (this.$route.query.query !== undefined) {
-          await this.$router.push({
-            path: this.localePath({name: 'index'}),
-            query: JSON.parse(this.$route.query.query as string)
-          })
+        if (this.$route.query.redirect !== undefined) {
+          const redirect = split(this.$route.query.redirect as string, "_")[0]
+
+          if (this.$route.query.query !== undefined) {
+            await this.$router.push({
+              path: this.localePath({name: redirect}),
+              query: JSON.parse(this.$route.query.query as string)
+            })
+          } else {
+            await this.$router.push({path: this.localePath({name: redirect})})
+          }
         } else {
           await this.$router.push({path: this.localePath({name: 'index'})})
         }
-
       } catch {
         this.loading = false
       }
