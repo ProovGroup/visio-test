@@ -21,7 +21,7 @@
     "js-cookie": "^2.2.1",
     "leaflet": "^1.7.1",
     "lodash-es": "^4.17.21",
-    "nuxt": "^2.15.3",
+    "nuxt": "^3.4.3",
     "nuxt-i18n": "^6.21.1",
     "vee-validate": "^3.4.5",
     "vue-advanced-cropper": "^0.20.1",
